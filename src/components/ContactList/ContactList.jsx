@@ -1,10 +1,11 @@
 
-import {ItemContact, Text, Button, List} from './ContactList.styled'
+import { ItemContact, Text, Button, List } from './ContactList.styled'
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
     return (
         <List>
-            {contacts.map(({name, number, id}) => {
+            {contacts.map(({ name, number, id }) => {
+                console.log(id)
                 return (
                     
                     <ItemContact key={id}>
