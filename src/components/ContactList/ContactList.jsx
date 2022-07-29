@@ -7,7 +7,7 @@ export const ContactList = ({ contacts }) => {
             {contacts.map(({name, number}) => {
                 return (
                     <ItemContact id={nanoid()}>
-                        <Text>{name}: {number}</Text>
+                        <Text>{name}:   {number}</Text>
                         <Button type="button">Delete</Button>
                  </ItemContact>
              )

@@ -10,7 +10,10 @@ width: 50%;
 `;
 
 export const Text = styled.p`
+margin: 0;
 margin-right: 10px;
+
+
 `;
 
 export const Button = styled.button`

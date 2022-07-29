@@ -8,6 +8,9 @@ export const Form = styled.form`
 
 export const Label = styled.label`
 margin-bottom: 10px;
+width: 300px;
+display: flex;
+justify-content: space-between;
 font-size: 18px;
 font-weight: 500;
 `
@@ -19,6 +22,6 @@ padding: 5px;
 `
 
 export const Button = styled.button`
-width: 214px ;
+width: 150px ;
 padding: 5px;
 `
