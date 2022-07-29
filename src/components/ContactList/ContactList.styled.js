@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const ItemContact = styled.div`
+export const ItemContact = styled.li`
 padding: 5px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-width: 50%;
+width: 400px;
 
 `;
 
@@ -20,4 +20,9 @@ export const Button = styled.button`
 min-width: 100px;
 height: 30px;
 padding: 5px;
+`;
+
+export const List = styled.ul`
+margin: 0;
+padding: 0;
 `

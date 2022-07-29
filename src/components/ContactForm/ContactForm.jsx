@@ -21,26 +21,14 @@ class ContactForm extends React.Component {
     this.setState({  name: '',
     number:'',})
   }
-  handelSubmit = event => {
+  handelSubmit = ( event) => {
     event.preventDefault();
-    
-    this.props.onSubmit({ ...this.state });
+   this.props.onSubmit({ ...this.state });
     this.reset();
 
   }
 
  
-
-  // hadleInputChange = event => {
-  //   console.log(event.currentTarget.value);
-  //   this.setState({ name: event.currentTarget.value });
-  // };
-
-  // handelNumberChange = event => {
-    
-  //   this.setState({number: event.currentTarget.value})
-  // }
-
   render() {
 
     const { name, number } = this.state;

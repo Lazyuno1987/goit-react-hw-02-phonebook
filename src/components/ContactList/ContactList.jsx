@@ -1,17 +1,19 @@
-import { nanoid } from "nanoid";
-import {ItemContact, Text, Button} from './ContactList.styled'
 
-export const ContactList = ({ contacts }) => {
+import {ItemContact, Text, Button, List} from './ContactList.styled'
+
+export const ContactList = ({ contacts, onDeleteContact }) => {
     return (
-        <>
-            {contacts.map(({name, number}) => {
+        <List>
+            {contacts.map(({name, number, id}) => {
                 return (
-                    <ItemContact id={nanoid()}>
+                    
+                    <ItemContact key={id}>
                         <Text>{name}:   {number}</Text>
-                        <Button type="button">Delete</Button>
-                 </ItemContact>
+                        <Button onClick={()=>onDeleteContact(id)} type="button">Delete</Button>
+                        </ItemContact>
+                        
              )
          })}   
-        </>
+     </List>
     )
 }
