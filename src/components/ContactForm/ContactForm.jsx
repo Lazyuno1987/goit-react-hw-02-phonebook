@@ -1,41 +1,36 @@
 import React from 'react';
-import { nanoid } from "nanoid";
-import PropTypes from "prop-types";
+import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 // import { Filter } from '../Filter/Filter'
-
 
 class ContactForm extends React.Component {
   state = {
     name: '',
-    number:'',
+    number: '',
   };
 
   static propTypes = {
-   onSubmit: PropTypes.func.isRequired
- };
+    onSubmit: PropTypes.func.isRequired,
+  };
 
   handleInputChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({
-      [name]:value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   reset = () => {
-    this.setState({  name: '',
-    number:'',})
-  }
-  handelSubmit = ( event) => {
+    this.setState({ name: '', number: '' });
+  };
+  handelSubmit = event => {
     event.preventDefault();
-   this.props.onSubmit({ ...this.state });
+    this.props.onSubmit({ ...this.state });
     this.reset();
+  };
 
-  }
-
- 
   render() {
-
     const { name, number } = this.state;
     return (
       <Form onSubmit={this.handelSubmit}>
@@ -51,7 +46,7 @@ class ContactForm extends React.Component {
             required
           />
         </Label>
-        <Label id={nanoid()} >
+        <Label id={nanoid()}>
           Number
           <Input
             type="tel"
@@ -65,7 +60,6 @@ class ContactForm extends React.Component {
         </Label>
 
         <Button type="submit">Add contact</Button>
-       
       </Form>
     );
   }
