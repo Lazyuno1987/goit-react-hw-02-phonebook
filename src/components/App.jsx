@@ -15,10 +15,12 @@ class App extends React.Component {
     filter: '',
   };
 
-  onSubmitForm = ({ name, number, id }) => {
+  
+
+  onSubmitForm = ({ name, number}) => {
     const contact = { name, number, id:nanoid() };
     this.setState(({ contacts }) => {
-   return   contacts.find(
+   return   contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
       )
         ?  alert(`${name} is already in contacts!`)
@@ -52,7 +54,7 @@ class App extends React.Component {
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <ContactList contacts={this.onFiltr()} onDeleteContact={this.onDeleteContact}
-          id = {this.state.contacts.id}
+        id = {this.state.contacts.id}
            />
       </div>
     );

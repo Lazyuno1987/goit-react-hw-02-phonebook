@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 import { Form, Label, Input, Button } from './ContactForm.styled';
 // import { Filter } from '../Filter/Filter'
 
@@ -9,6 +10,10 @@ class ContactForm extends React.Component {
     name: '',
     number:'',
   };
+
+  static propTypes = {
+   onSubmit: PropTypes.func.isRequired
+ };
 
   handleInputChange = event => {
     const { name, value } = event.currentTarget;
